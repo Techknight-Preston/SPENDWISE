@@ -1,30 +1,229 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPENDWISE</title>
+    <title>SPENDWISE | Financial Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-   
 </head>
+
 <body>
-    <h1>My Budget Tracker</h1>
-    <h3>Track your income and expense in one place.</h3>
-    <div> <b>Add Expense</b> <br> <br>
-        
-        <label for="expense_name">Expense name</label>
-        <input type = "text" id="expense_name"> <br> <br>
-        <label for="amount">Amount</label>
-        <input type ="number" id="amount"> <br> <br>
-        <label for ="category">Category</label>
-        <input type="text" id="category"> <br> <br>
 
-         <h2>Your Expenses</h2>
-         <p>No Expenses yet</p>
-     </div>
+    <div class="dashboard">
 
-   
-    
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="brand-icon">S</span>
+                <h2>SPENDWISE</h2>
+            </div>
+
+            <p class="menu-label">MAIN MENU</p>
+
+            <nav class="navigation">
+                <a href="#overview" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="#categories" class="nav-link">
+                    <span>⇄</span> Categories
+                </a>
+
+                <a href="#monthly-summary" class="nav-link">
+                    <span>▤</span> Monthly Summary
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>PERSONAL FINANCE</p>
+                <span>Manage your money wisely.</span>
+            </div>
+        </aside>
+
+
+        <!-- Main Dashboard -->
+        <main class="main-content" id="overview">
+
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Financial Dashboard</h1>
+                    <p>Welcome back! Here's your financial overview.</p>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-avatar">PM</div>
+                    <div>
+                        <h3>Preston Mark</h3>
+                        <span>Personal Account</span>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- Monthly Summary -->
+            <section class="summary-section" id="monthly-summary">
+                <div class="section-heading">
+                    <div>
+                        <h2>Monthly Overview</h2>
+                        <p>Your financial summary for November 2026.</p>
+                    </div>
+                    <span class="period">November 2026</span>
+                </div>
+
+                <div class="summary-cards">
+
+                    <article class="summary-card">
+                        <span>Total Income</span>
+                        <h3>KSh 85,000</h3>
+                        <p>Monthly income</p>
+                    </article>
+
+                    <article class="summary-card">
+                        <span>Total Expenses</span>
+                        <h3>KSh 48,500</h3>
+                        <p>Monthly spending</p>
+                    </article>
+
+                    <article class="summary-card">
+                        <span>Available Balance</span>
+                        <h3>KSh 36,500</h3>
+                        <p>Remaining funds</p>
+                    </article>
+
+                </div>
+            </section>
+
+
+            <!-- Category Cards -->
+            <section class="categories-section" id="categories">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Expense Categories</h2>
+                        <p>Track where your money goes.</p>
+                    </div>
+                </div>
+
+                <div class="category-grid">
+
+                    <!-- Food -->
+                    <article class="category-card" tabindex="0">
+                        <div class="card-top">
+                            <div class="category-icon food">🍔</div>
+                            <span class="category-status">Monthly</span>
+                        </div>
+
+                        <h3>Food</h3>
+                        <h2>KSh 8,500</h2>
+                        <p>Budget: KSh 12,000</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill food-progress"></div>
+                        </div>
+                    </article>
+
+
+                    <!-- Transport -->
+                    <article class="category-card" tabindex="0">
+                        <div class="card-top">
+                            <div class="category-icon transport">🚗</div>
+                            <span class="category-status">Monthly</span>
+                        </div>
+
+                        <h3>Transport</h3>
+                        <h2>KSh 5,000</h2>
+                        <p>Budget: KSh 8,000</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill transport-progress"></div>
+                        </div>
+                    </article>
+
+
+                    <!-- Rent -->
+                    <article class="category-card" tabindex="0">
+                        <div class="card-top">
+                            <div class="category-icon rent">🏠</div>
+                            <span class="category-status">Monthly</span>
+                        </div>
+
+                        <h3>Rent</h3>
+                        <h2>KSh 15,000</h2>
+                        <p>Budget: KSh 15,000</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill rent-progress"></div>
+                        </div>
+                    </article>
+
+
+                    <!-- Entertainment -->
+                    <article class="category-card" tabindex="0">
+                        <div class="card-top">
+                            <div class="category-icon entertainment">🎮</div>
+                            <span class="category-status">Monthly</span>
+                        </div>
+
+                        <h3>Entertainment</h3>
+                        <h2>KSh 4,000</h2>
+                        <p>Budget: KSh 6,000</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill entertainment-progress"></div>
+                        </div>
+                    </article>
+
+
+                    <!-- Savings -->
+                    <article class="category-card" tabindex="0">
+                        <div class="card-top">
+                            <div class="category-icon savings">💰</div>
+                            <span class="category-status">Monthly</span>
+                        </div>
+
+                        <h3>Savings</h3>
+                        <h2>KSh 12,000</h2>
+                        <p>Target: KSh 15,000</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill savings-progress"></div>
+                        </div>
+                    </article>
+
+
+                    <!-- Utilities -->
+                    <article class="category-card" tabindex="0">
+                        <div class="card-top">
+                            <div class="category-icon utilities">💡</div>
+                            <span class="category-status">Monthly</span>
+                        </div>
+
+                        <h3>Utilities</h3>
+                        <h2>KSh 4,000</h2>
+                        <p>Budget: KSh 5,000</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill utilities-progress"></div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <footer class="dashboard-footer">
+                <p>© 2026 SPENDWISE. Manage your money wisely.</p>
+            </footer>
+
+        </main>
+
+    </div>
 
 </body>
 </html>
