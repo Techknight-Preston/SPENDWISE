@@ -92,6 +92,59 @@ developing a financial dashboard interface.
 
 ---
 
+
+## JavaScript Foundation
+
+SPENDWISE has been extended with JavaScript to process budgeting information, collect user input, perform calculations and display financial results in the browser console.
+
+### JavaScript Concepts Implemented
+
+#### 1. Variables and Data Types
+- `const` is used to store the expense categories that remain fixed.
+- `let` is used for values that change during execution, including monthly income and expenses.
+- Numbers are used for financial calculations.
+- Strings are used to collect and display user information.
+- Arrays are used to store expense records.
+- Objects are used to represent individual expenses using their category and amount.
+
+#### 2. User Input
+The application uses the JavaScript `prompt()` function to collect the user's monthly income and expenses for Food, Transport, Rent, Entertainment, Savings and Utilities.
+
+The collected values are converted into numbers using `Number()` and validated before being processed.
+
+#### 3. Budget Calculations
+The application calculates the total expenses by adding the amounts entered for all expense categories.
+
+It then calculates the remaining balance by subtracting total expenses from monthly income.
+
+**Formula:**
+
+Remaining Balance = Monthly Income - Total Expenses
+
+#### 4. Functions
+The application uses reusable functions to organize its logic:
+
+- `collectBudgetData()` collects and validates user input.
+- `calculateTotalExpenses()` calculates the total expenses.
+- `calculateRemainingBalance()` calculates the remaining balance.
+- `displayBudgetResults()` displays the financial report in the browser console.
+
+#### 5. Loops
+The `for...of` loop is used to iterate through the expense categories and expense records, reducing repetitive code.
+
+#### 6. Output
+The application displays a labelled financial report in the browser console using `console.log()`. The report includes monthly income, individual category expenses, total expenses and remaining balance.
+
+It also displays a warning if total expenses exceed monthly income.
+
+#### 7. How to Test the JavaScript
+1. Open `index.html` in a web browser.
+2. Open the browser Developer Tools using `F12`.
+3. Select the Console tab.
+4. Refresh the page.
+5. Enter the requested income and expenses in the pop-up prompts.
+6. View the generated SPENDWISE budget report in the console.
+
 **Project Name:** SPENDWISE  
 **Project Type:** Personal Finance Dashboard  
 **Developer:** Preston Mark Ngui
