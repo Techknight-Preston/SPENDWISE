@@ -1,7 +1,7 @@
 
 /* =================================
    SPENDWISE DASHBOARD
-   CSS GRID AND FLEXBOX
+   CSS GRID, FLEXBOX AND INTERACTIVITY
 ================================= */
 
 /* 1. CSS CUSTOM PROPERTIES */
@@ -34,17 +34,22 @@ body {
     background-color: var(--background-color);
     color: var(--primary-text);
     font-family: 'Inter', sans-serif;
+    line-height: 1.5;
 }
 
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
 }
 
+button, input, select {
+    font: inherit;
+}
+
 /* 3. MAIN DASHBOARD GRID */
 
 .dashboard {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 250px minmax(0, 1fr);
     min-height: 100vh;
 }
 
@@ -145,7 +150,7 @@ h1, h2, h3 {
     min-width: 0;
 }
 
-/* 6. HEADER USING FLEXBOX */
+/* 6. HEADER */
 
 .top-header {
     display: flex;
@@ -221,7 +226,7 @@ h1, h2, h3 {
     font-size: 12px;
 }
 
-/* 8. SUMMARY CARDS USING GRID */
+/* 8. SUMMARY CARDS */
 
 .summary-cards {
     display: grid;
@@ -252,7 +257,7 @@ h1, h2, h3 {
     font-size: 12px;
 }
 
-/* 9. SIX CATEGORY CARDS USING GRID */
+/* 9. CATEGORY CARDS */
 
 .category-grid {
     display: grid;
@@ -266,17 +271,11 @@ h1, h2, h3 {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: var(--shadow);
-
     display: flex;
     flex-direction: column;
     gap: 12px;
-
-    transition:
-        transform 200ms ease,
-        box-shadow 200ms ease;
+    transition: transform 200ms ease, box-shadow 200ms ease;
 }
-
-/* 10. CARD HOVER AND KEYBOARD FOCUS */
 
 .category-card:hover,
 .category-card:focus-visible {
@@ -288,8 +287,6 @@ h1, h2, h3 {
     outline: 3px solid var(--accent-color);
     outline-offset: 3px;
 }
-
-/* 11. CATEGORY CARD CONTENT */
 
 .card-top {
     display: flex;
@@ -308,29 +305,12 @@ h1, h2, h3 {
     font-size: 22px;
 }
 
-.food {
-    background-color: #FFF7ED;
-}
-
-.transport {
-    background-color: #EFF6FF;
-}
-
-.rent {
-    background-color: #F5F3FF;
-}
-
-.entertainment {
-    background-color: #FDF2F8;
-}
-
-.savings {
-    background-color: #ECFDF5;
-}
-
-.utilities {
-    background-color: #FEFCE8;
-}
+.food { background-color: #FFF7ED; }
+.transport { background-color: #EFF6FF; }
+.rent { background-color: #F5F3FF; }
+.entertainment { background-color: #FDF2F8; }
+.savings { background-color: #ECFDF5; }
+.utilities { background-color: #FEFCE8; }
 
 .category-status {
     color: var(--secondary-text);
@@ -354,7 +334,7 @@ h1, h2, h3 {
     font-size: 12px;
 }
 
-/* 12. PROGRESS BARS */
+/* 10. PROGRESS BARS */
 
 .progress-track {
     width: 100%;
@@ -372,44 +352,16 @@ h1, h2, h3 {
     transition: width 300ms ease;
 }
 
-.food-progress {
-    width: 71%;
-}
+.food-progress { width: 0%; }
+.transport-progress { width: 0%; }
+.rent-progress { width: 0%; }
+.entertainment-progress { width: 0%; }
+.savings-progress { width: 0%; }
+.utilities-progress { width: 0%; }
 
-.transport-progress {
-    width: 63%;
-}
+/* 11. INCOME AND EXPENSE FORMS */
 
-.rent-progress {
-    width: 100%;
-}
-
-.entertainment-progress {
-    width: 67%;
-}
-
-.savings-progress {
-    width: 80%;
-}
-
-.utilities-progress {
-    width: 80%;
-}
-
-/* 13. FOOTER */
-
-.dashboard-footer {
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
-    color: var(--secondary-text);
-    font-size: 12px;
-    text-align: center;
-}
-
-/* 14. INTERACTIVE SPENDWISE FEATURES */
-
-/* Income and expense forms */
-
+.income-form,
 .expense-form {
     display: flex;
     align-items: end;
@@ -420,8 +372,10 @@ h1, h2, h3 {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: var(--shadow);
+    margin-bottom: 25px;
 }
 
+.income-form div,
 .expense-form div {
     display: flex;
     flex-direction: column;
@@ -429,12 +383,14 @@ h1, h2, h3 {
     flex: 1 1 180px;
 }
 
+.income-form label,
 .expense-form label {
     color: var(--primary-text);
     font-size: 13px;
     font-weight: 600;
 }
 
+.income-form input,
 .expense-form input,
 .expense-form select {
     width: 100%;
@@ -447,57 +403,44 @@ h1, h2, h3 {
     font-size: 13px;
 }
 
+.income-form input:focus,
+.expense-form input:focus,
+.expense-form select:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.income-form button,
 .expense-form button {
     padding: 13px 22px;
     border: none;
     border-radius: 7px;
     background-color: var(--accent-color);
-    color: white;
+    color: #FFFFFF;
     font-weight: 600;
     cursor: pointer;
     transition: transform 200ms ease, opacity 200ms ease;
 }
 
+.income-form button:hover,
 .expense-form button:hover {
     transform: translateY(-2px);
     opacity: 0.9;
 }
 
-/* Expense records */
-
-.expense-item {
-    margin-bottom: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.remove-expense {
-    align-self: flex-start;
-    padding: 8px 15px;
-    background-color: #DC2626;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.remove-expense:hover {
-    opacity: 0.85;
-}
-
-/* Budget feedback message */
+/* 12. BUDGET FEEDBACK */
 
 #budget-message {
     margin-top: 20px;
     padding: 15px;
     background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
 }
 
-/* Expense list layout */
+/* 13. EXPENSE RECORDS */
 
 #expense-list {
     margin-top: 20px;
@@ -507,7 +450,54 @@ h1, h2, h3 {
     display: none;
 }
 
-/* 15. RESPONSIVE DESIGN BELOW 768px */
+.expense-item {
+    margin-bottom: 14px;
+    padding: 16px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.expense-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.expense-details span {
+    color: var(--secondary-text);
+    font-size: 12px;
+}
+
+.remove-expense {
+    padding: 8px 15px;
+    background-color: #DC2626;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.remove-expense:hover {
+    opacity: 0.85;
+}
+
+/* 14. FOOTER */
+
+.dashboard-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    color: var(--secondary-text);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 15. RESPONSIVE DESIGN */
 
 @media screen and (max-width: 767px) {
 
@@ -557,12 +547,19 @@ h1, h2, h3 {
         align-items: flex-start;
     }
 
+    .income-form,
     .expense-form {
         flex-direction: column;
         align-items: stretch;
     }
 
+    .income-form div,
     .expense-form div {
+        width: 100%;
+    }
+
+    .income-form button,
+    .expense-form button {
         width: 100%;
     }
 }
@@ -595,8 +592,13 @@ h1, h2, h3 {
         color: var(--primary-text);
     }
 
+    .income-form input,
     .expense-form input,
     .expense-form select {
+        color: var(--primary-text);
+    }
+
+    .category-icon {
         color: var(--primary-text);
     }
 }
