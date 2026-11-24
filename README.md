@@ -1,151 +1,222 @@
 
-# SPENDWISE - Financial Dashboard
+# SPENDWISE - Personal Budget Management Dashboard
 
-## Project Description
+## 1. Project Overview
 
-SPENDWISE is a personal finance dashboard designed to help users
-organize and monitor their monthly finances.
+SpendWise is a personal budget management dashboard designed to help users manage their monthly income, record expenses, monitor spending habits, and calculate their remaining balance.
 
-This project builds on the previous Budget Tracker assignment
-and introduces a modern dashboard layout using CSS Grid and
-Flexbox.
+The application provides a simple and interactive interface that allows users to organize expenses into different categories and monitor their financial position.
 
-The dashboard displays financial information through static
-category cards, providing a clean and organized overview of
-personal spending.
+## 2. Technologies Used
 
-## Technologies Used
+- HTML5 - Provides the structure of the application.
+- CSS3 - Handles styling, CSS Grid, Flexbox, responsiveness, and dark mode.
+- JavaScript - Implements application logic and interactive functionality.
+- DOM Manipulation - Dynamically updates dashboard information.
+- Git and GitHub - Used for version control and project hosting.
 
-- HTML5
-- CSS3
-- CSS Grid
-- Flexbox
-- Google Fonts (Poppins and Inter)
-- CSS Custom Properties
-- Responsive Web Design
+## 3. Main Features
 
-## Project Structure
-
-### 1. index.html
-
-This file contains the structure of the dashboard.
-
-It includes:
-
-- Sidebar navigation menu.
-- Dashboard header.
-- User profile section.
-- Monthly financial summary.
-- Six financial category cards:
+- Monthly income management.
+- Expense recording and management.
+- Six expense categories:
   - Food
   - Transport
   - Rent
   - Entertainment
   - Savings
   - Utilities
-- Dashboard footer.
+- Automatic calculation of total expenses.
+- Automatic calculation of remaining balance.
+- Dynamic category spending totals.
+- Budget warnings when expenses exceed income.
+- Ability to remove recorded expenses.
+- Responsive dashboard layout.
+- Dark theme support based on system preferences.
 
-### 2. style.css
+## 4. JavaScript Implementation
 
-This file controls the visual appearance and layout.
+The JavaScript functionality connects user actions, application data, calculations, and the dashboard display.
 
-It includes:
+### A. Variables and Data Types
 
-- CSS custom properties for the colour theme.
-- Typography and Google Fonts.
-- CSS Grid for the main dashboard layout.
-- Flexbox for navigation, header and card content.
-- Card spacing, borders and shadows.
-- Hover and keyboard focus animations.
-- Responsive layout for screens below 768px.
-- Dark theme using system colour preferences.
+Variables are used to store monthly income, expense records, category information, and expense identifiers.
 
-### 3. script.js
+The application uses:
+- Strings for expense names and categories.
+- Numbers for income and expense amounts.
+- Arrays to store expense records.
+- Objects to represent individual expenses.
+- Booleans and conditions to evaluate budget situations.
 
-The existing JavaScript file from the previous
-Budget Tracker project is retained in the repository.
-The current dashboard shell uses static content and
-does not require JavaScript functionality.
+### B. Arrays
 
-## Design Features
+An array named `categories` stores the six available expense categories.
 
-- Professional navy and emerald green colour palette.
-- Clean and modern dashboard interface.
-- Six financial category cards.
-- Responsive single-column mobile layout.
-- Interactive visual hover and focus effects.
-- Automatic light and dark theme support.
+Another array named `expenses` stores expense records entered by the user.
 
-## How to Run the Project
+Each expense is represented by an object containing:
+- Expense ID
+- Expense name
+- Expense category
+- Expense amount
 
-1. Clone or download the SPENDWISE repository.
-2. Open the project folder.
-3. Open index.html in a web browser.
-4. View the financial dashboard.
+### C. Conditional Statements
 
-## Project Purpose
+Conditional statements evaluate different budgeting situations.
 
-The purpose of this project is to demonstrate the
-use of modern CSS layout techniques, responsive
-design, custom properties and visual styling in
-developing a financial dashboard interface.
+The application checks whether:
+- Expenses exceed monthly income.
+- The remaining balance is zero.
+- The remaining balance is getting low.
+- The user is still within the available budget.
+
+The appropriate budget message is displayed depending on the result.
+
+### D. Loops
+
+JavaScript loops process expense records and calculate financial information.
+
+Loops are used to:
+- Calculate total expenses.
+- Calculate spending per category.
+- Update category totals.
+- Display expense records.
+
+### E. DOM Manipulation
+
+DOM manipulation allows JavaScript to update the HTML page dynamically.
+
+The application updates:
+- Total monthly income.
+- Total expenses.
+- Remaining balance.
+- Category spending totals.
+- Category progress bars.
+- Budget warning messages.
+- The list of recorded expenses.
+
+The dashboard updates without requiring the user to reload the page.
+
+### F. Event Listeners
+
+Event listeners respond to user interactions.
+
+The application uses event listeners to:
+- Update monthly income when the income form is submitted.
+- Add expenses when the expense form is submitted.
+- Remove expenses using the Remove button.
+- Refresh the dashboard whenever financial information changes.
+
+## 5. How to Use SpendWise
+
+1. Open `index.html` in a web browser.
+2. Enter your monthly income.
+3. Submit the income form.
+4. Enter an expense name.
+5. Select an expense category.
+6. Enter the expense amount.
+7. Submit the expense form.
+8. View the updated dashboard and remaining balance.
+9. Use the Remove button to delete an expense.
+
+## 6. Weekly Improvements
+
+### Previous Development Stage
+
+The dashboard was initially developed using HTML and CSS.
+
+The first version included:
+- Dashboard layout.
+- Sidebar navigation.
+- Summary cards.
+- Six expense category cards.
+- Responsive design using CSS Grid and Flexbox.
+- Dark theme support.
+
+### JavaScript Foundation
+
+JavaScript was introduced to handle:
+- Variables and data types.
+- User input.
+- Budget calculations.
+- Functions.
+- Loops.
+- Console output.
+
+### Interactive Application
+
+The application was further improved by introducing:
+- Conditional statements for budget evaluation.
+- Arrays and objects for expense management.
+- Dynamic DOM manipulation.
+- Event listeners for user interactions.
+- Automatic dashboard updates.
+- Expense removal functionality.
+
+## 7. Challenges and Solutions
+
+| Challenge | Solution |
+|---|---|
+| Updating financial information dynamically | Used DOM manipulation to update dashboard elements. |
+| Managing multiple expense records | Used arrays and objects to organize expense data. |
+| Evaluating different budget situations | Implemented conditional statements. |
+| Calculating total expenses | Used loops to process expense records. |
+| Responding to user actions | Implemented event listeners for forms and buttons. |
+| Maintaining a responsive interface | Used CSS Grid, Flexbox, and media queries. |
+
+## 8. Testing
+
+The application can be tested by:
+
+- Entering different monthly income values.
+- Adding expenses under different categories.
+- Checking automatic expense calculations.
+- Removing recorded expenses.
+- Testing situations where expenses exceed income.
+- Checking the dashboard on different screen sizes.
+
+Example test:
+
+Monthly Income: KSh 50,000
+
+Expenses:
+- Food: KSh 2,000
+- Transport: KSh 1,000
+- Rent: KSh 10,000
+- Entertainment: KSh 1,000
+- Savings: KSh 5,000
+- Utilities: KSh 1,000
+
+Expected Results:
+- Total Expenses: KSh 20,000
+- Remaining Balance: KSh 30,000
+
+## 9. Project Structure
+
+```text
+SPENDWISE/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+## 10. Future Improvements
+
+Future versions may introduce:
+- Saving financial records using local storage.
+- Monthly expense reports.
+- Expense editing functionality.
+- Charts and graphical spending analysis.
+- User authentication and database integration.
+
+## 11. GitHub Repository
+
+Project Repository:
+https://github.com/Techknight-Preston/SPENDWISE
 
 ---
 
-
-## JavaScript Foundation
-
-SPENDWISE has been extended with JavaScript to process budgeting information, collect user input, perform calculations and display financial results in the browser console.
-
-### JavaScript Concepts Implemented
-
-#### 1. Variables and Data Types
-- `const` is used to store the expense categories that remain fixed.
-- `let` is used for values that change during execution, including monthly income and expenses.
-- Numbers are used for financial calculations.
-- Strings are used to collect and display user information.
-- Arrays are used to store expense records.
-- Objects are used to represent individual expenses using their category and amount.
-
-#### 2. User Input
-The application uses the JavaScript `prompt()` function to collect the user's monthly income and expenses for Food, Transport, Rent, Entertainment, Savings and Utilities.
-
-The collected values are converted into numbers using `Number()` and validated before being processed.
-
-#### 3. Budget Calculations
-The application calculates the total expenses by adding the amounts entered for all expense categories.
-
-It then calculates the remaining balance by subtracting total expenses from monthly income.
-
-**Formula:**
-
-Remaining Balance = Monthly Income - Total Expenses
-
-#### 4. Functions
-The application uses reusable functions to organize its logic:
-
-- `collectBudgetData()` collects and validates user input.
-- `calculateTotalExpenses()` calculates the total expenses.
-- `calculateRemainingBalance()` calculates the remaining balance.
-- `displayBudgetResults()` displays the financial report in the browser console.
-
-#### 5. Loops
-The `for...of` loop is used to iterate through the expense categories and expense records, reducing repetitive code.
-
-#### 6. Output
-The application displays a labelled financial report in the browser console using `console.log()`. The report includes monthly income, individual category expenses, total expenses and remaining balance.
-
-It also displays a warning if total expenses exceed monthly income.
-
-#### 7. How to Test the JavaScript
-1. Open `index.html` in a web browser.
-2. Open the browser Developer Tools using `F12`.
-3. Select the Console tab.
-4. Refresh the page.
-5. Enter the requested income and expenses in the pop-up prompts.
-6. View the generated SPENDWISE budget report in the console.
-
-**Project Name:** SPENDWISE  
-**Project Type:** Personal Finance Dashboard  
-**Developer:** Preston Mark Ngui
-
+Developed as part of a web development learning project.
